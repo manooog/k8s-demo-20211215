@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-deployment-20211215
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: demo-app-20211215
+  template:
+    metadata:
+      labels:
+        app: demo-app-20211215
+    spec:
+      containers:
+        - name: demo-20211215
+          image: rxh1212/demo-20211215
+          ports:
+            - containerPort: 3000

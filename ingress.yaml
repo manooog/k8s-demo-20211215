@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: demo-20211215
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+    - host: demo-20211215.io
+      http:
+        paths:
+          - path: /20211215
+            backend:
+              serviceName: demo-service-20211215
+              servicePort: 80
